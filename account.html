@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Registration</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css">
+  <style>
+    .register-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <!-- Login Form -->
+          <div class="card" id="login-form">
+            <div class="card-content">
+              <h1 class="title has-text-centered">Login</h1>
+              <form>
+                <div class="field">
+                  <label class="label">Username</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Enter your username">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                    <input class="input" type="password" placeholder="Enter your password">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button class="button is-primary is-fullwidth">Login</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Registration Form -->
+          <div class="card register-form" id="register-form">
+            <div class="card-content">
+              <h1 class="title has-text-centered">Register</h1>
+              <form>
+                <div class="field">
+                  <label class="label">Username</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Enter your username">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    <input class="input" type="email" placeholder="Enter your email">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                    <input class="input" type="password" placeholder="Enter your password">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button class="button is-primary is-fullwidth">Register</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <br>
+          <div class="has-text-centered mt-3">
+            <button class="button is-info" id="toggle-form">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+      const toggleButton = document.getElementById('toggle-form');
+
+      toggleButton.addEventListener('click', function () {
+        if (loginForm.style.display === 'none') {
+          loginForm.style.display = 'block';
+          registerForm.style.display = 'none';
+          toggleButton.textContent = 'Register';
+        } else {
+          loginForm.style.display = 'none';
+          registerForm.style.display = 'block';
+          toggleButton.textContent = 'Login';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
