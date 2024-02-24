@@ -1,159 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tuition Tracking</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <style>
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuition Tracking</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    .contribution-container {
+      max-height: 300px; /* Adjust height as needed */
+      overflow-y: auto;
+    }
+    .contribution-tracker {
+      display: grid;
+      grid-template-columns: repeat(53, 10px);
+      grid-template-rows: repeat(7, 10px);
+      gap: 1px;
+      padding: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contribution-box {
+      width: 9px;
+      height: 9px;
+      background-color: #E3E1D9; /* Default color (blank) */
+      border-radius: 20%; /* Rounded corners */
+      padding: 1px; /* Added padding */
+    }
+    .contribution-box.green {
+      background-color: #86B6F6; /* Green for contributions */
+    }
+    .load-more-button {
+      margin-top: 20px;
+    }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
       }
-
-      .card {
-        animation: slideIn 0.5s ease;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .card-content {
-        padding: 1.5rem;
-      }
+    .card {
+      animation: slideIn 0.5s ease;
+      margin-bottom: 20px;
+    }
 
-      .subtitle {
-        margin-bottom: 1rem;
-      }
+    .card-content {
+      padding: 1.5rem;
+    }
 
-      .days-info {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
+    .subtitle {
+      margin-bottom: 1rem;
+    }
 
-      footer {
-        background-color: #f5f5f5;
-        padding: 20px 0;
-        text-align: center;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <nav
-      class="navbar is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="#">
-          <strong>Tuition Tracking</strong>
-        </a>
+    .days-info {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <strong>Tuition Tracking</strong>
+      </a>
 
-        <a
-          role="button"
-          class="navbar-burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="../"> Home </a>
+        <a class="navbar-item" href="../add-student.html"> Add Student </a>
+        <a class="navbar-item" href="../add-tuition.html"> Add Tuition </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="../"> Home </a>
-
-          <a class="navbar-item" href="../add-student.html"> Add Student </a>
-
-          <a class="navbar-item" href="../add-tuition.html"> Add Tuition </a>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary" href="../account.html">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light" href="../account.html"> Log in </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <section class="section">
-      <div class="container">
-        <div class="columns is-multiline">
-          <div class="column is-one-third">
-            <div class="card">
-              <div class="card-content">
-                <p class="title">John Doe</p>
-                <p class="subtitle">Start Date: 2024-02-24</p>
-                <p>Amount: $100</p>
-                <div class="days-info">
-                  Days Gone: 10<br />
-                  Days Left: 5
-                </div>
-                <a
-                  href="../tuition.html"
-                  class="button is-info is-fullwidth"
-                  >View Details</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card">
-              <div class="card-content">
-                <p class="title">Jane Smith</p>
-                <p class="subtitle">Start Date: 2024-02-23</p>
-                <p>Amount: $120</p>
-                <div class="days-info">
-                  Days Gone: 15<br />
-                  Days Left: 0
-                </div>
-                <a
-                  href="../tuition.html"
-                  class="button is-info is-fullwidth"
-                  >View Details</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card">
-              <div class="card-content">
-                <p class="title">Jane Smith</p>
-                <p class="subtitle">Start Date: 2024-02-23</p>
-                <p>Amount: $120</p>
-                <div class="days-info">
-                  Days Gone: 15<br />
-                  Days Left: 0
-                </div>
-                <a
-                  href="../tuition.html"
-                  class="button is-info is-fullwidth"
-                  >View Details</a
-                >
-              </div>
-            </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="../account.html">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light" href="../account.html"> Log in </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </nav>
+
+
+  <section class="section">
+    <div class="container">
+    <h2 class="title has-text-centered">Overview</h2>
+    <div class="contribution-container">
+      <div class="contribution-tracker" id="contributionTracker"></div>
+    </div>
+    </div>
+  </section>
+<hr>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Tuition Tracking</h1>
+
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <p class="title">John Doe</p>
+              <p class="subtitle">Start Date: 2024-02-24</p>
+              <p>Amount: $100</p>
+              <div class="days-info">
+                Days Gone: 10<br />
+                Days Left: 5
+              </div>
+              <a href="../tuition.html" class="button is-info is-fullwidth">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more tuition cards here -->
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section">
     <div class="columns is-centered">
       <div class="has-text-centered-mobile">
         <button class="button is-success load-more-button">
@@ -164,22 +149,47 @@
         </button>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-      // Get the navbar burger element
-      const navbarBurger = document.querySelector('.navbar-burger');
-      // Get the target navbar menu element
-      const navbarMenu = document.getElementById(navbarBurger.dataset.target);
-  
-      // Add click event listener to the navbar burger
-      navbarBurger.addEventListener('click', () => {
-        // Toggle the 'is-active' class on both the burger and the menu
-        navbarBurger.classList.toggle('is-active');
-        navbarMenu.classList.toggle('is-active');
-      });
-  
-      // Initialize Feather icons
-      feather.replace();
-    </script>
-  </body>
+  </section>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const contributionTracker = document.getElementById('contributionTracker');
+
+      for (let row = 0; row < 7; row++) {
+        for (let col = 0; col < 53; col++) {
+          // Randomly determine if there's a contribution (20% chance)
+          const hasContribution = Math.random() <= 0.2;
+          // Add the 'green' class if there's a contribution, otherwise no class
+          const classList = ['contribution-box'];
+          if (hasContribution) {
+            classList.push('green');
+          }
+          // Create a new div element for the contribution box
+          const contributionBox = document.createElement('div');
+          contributionBox.className = classList.join(' ');
+          // Append the contribution box to the tracker
+          contributionTracker.appendChild(contributionBox);
+        }
+      }
+    });
+  </script>
+
+  <script>
+    // Get the navbar burger element
+    const navbarBurger = document.querySelector('.navbar-burger');
+    // Get the target navbar menu element
+    const navbarMenu = document.getElementById(navbarBurger.dataset.target);
+
+    // Add click event listener to the navbar burger
+    navbarBurger.addEventListener('click', () => {
+      // Toggle the 'is-active' class on both the burger and the menu
+      navbarBurger.classList.toggle('is-active');
+      navbarMenu.classList.toggle('is-active');
+    });
+
+    // Initialize Feather icons
+    feather.replace();
+  </script>
+</body>
 </html>
