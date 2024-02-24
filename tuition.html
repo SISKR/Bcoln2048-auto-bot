@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuition Details</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css">
+  <style>
+    .section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    .container {
+      max-width: 600px;
+    }
+    .detail-label {
+      font-weight: bold;
+    }
+    .checkbox-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+    }
+    .checkbox-item label {
+      margin-left: 0.5rem;
+    }
+    .button-group {
+      margin-top: 1rem;
+    }
+    .button-group .button {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>    <nav
+    class="navbar is-primary"
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <strong>Tuition Tracking</strong>
+      </a>
+
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#"> Home </a>
+
+        <a class="navbar-item" href="#"> Add Student </a>
+
+        <a class="navbar-item" href="#"> Add Tuition </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="#">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light" href="#"> Log in </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Tuition Details</h1>
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <div class="box">
+            <div class="content">
+              <p><span class="detail-label">Student Name:</span> Student 1</p>
+              <p><span class="detail-label">Number of Days:</span> 5</p>
+              <p><span class="detail-label">Payment Amount:</span> $100</p>
+              <p><span class="detail-label">Time per Class:</span> 1.5 hours</p>
+              <hr>
+              <div class="checkbox-container">
+                <!-- Generate checkboxes for 12 days -->
+                <!-- For demonstration, using only 5 days -->
+                <div class="checkbox-item">
+                  <input type="checkbox" id="day1" class="attendance-checkbox">
+                  <label for="day1">Day 1</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="day2" class="attendance-checkbox">
+                  <label for="day2">Day 2</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="day3" class="attendance-checkbox">
+                  <label for="day3">Day 3</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="day4" class="attendance-checkbox">
+                  <label for="day4">Day 4</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="day5" class="attendance-checkbox">
+                  <label for="day5">Day 5</label>
+                </div>
+                <!-- Repeat the pattern for the remaining days -->
+              </div>
+              <hr>
+              <p><span class="detail-label">Total Days Gone:</span> <span id="total-gone">0</span></p>
+              <p><span class="detail-label">Total Days Left:</span> <span id="total-left">5</span></p>
+            </div>
+            <div class="has-text-centered button-group">
+              <button class="button is-primary">Save</button>
+              <button class="button is-danger">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkboxes = document.querySelectorAll('.attendance-checkbox');
+      const totalGoneElement = document.getElementById('total-gone');
+      const totalLeftElement = document.getElementById('total-left');
+
+      // Update total days gone and left based on checkbox state
+      function updateTotalDays() {
+        let totalGone = 0;
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            totalGone++;
+          }
+        });
+        const totalLeft = checkboxes.length - totalGone;
+
+        totalGoneElement.textContent = totalGone;
+        totalLeftElement.textContent = totalLeft;
+      }
+
+      // Attach event listener to checkboxes
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateTotalDays);
+      });
+
+      // Initial calculation
+      updateTotalDays();
+    });
+  </script>
+  <script>
+    // Get the navbar burger element
+    const navbarBurger = document.querySelector('.navbar-burger');
+    // Get the target navbar menu element
+    const navbarMenu = document.getElementById(navbarBurger.dataset.target);
+
+    // Add click event listener to the navbar burger
+    navbarBurger.addEventListener('click', () => {
+      // Toggle the 'is-active' class on both the burger and the menu
+      navbarBurger.classList.toggle('is-active');
+      navbarMenu.classList.toggle('is-active');
+    });
+
+    // Initialize Feather icons
+    feather.replace();
+  </script>
+</body>
+</html>
