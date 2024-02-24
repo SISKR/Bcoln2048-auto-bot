@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuition Tracking</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card {
+        animation: slideIn 0.5s ease;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .subtitle {
+        margin-bottom: 1rem;
+      }
+
+      .days-info {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      footer {
+        background-color: #f5f5f5;
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <strong>Tuition Tracking</strong>
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#"> Home </a>
+
+          <a class="navbar-item" href="#"> Add Student </a>
+
+          <a class="navbar-item" href="#"> Add Tuition </a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="#">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light" href="#"> Log in </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-content">
+                <p class="title">John Doe</p>
+                <p class="subtitle">Start Date: 2024-02-24</p>
+                <p>Amount: $100</p>
+                <div class="days-info">
+                  Days Gone: 10<br />
+                  Days Left: 5
+                </div>
+                <a
+                  href="/tuition-details?id=1"
+                  class="button is-info is-fullwidth"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-content">
+                <p class="title">Jane Smith</p>
+                <p class="subtitle">Start Date: 2024-02-23</p>
+                <p>Amount: $120</p>
+                <div class="days-info">
+                  Days Gone: 15<br />
+                  Days Left: 0
+                </div>
+                <a
+                  href="/tuition-details?id=2"
+                  class="button is-info is-fullwidth"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="columns is-centered">
+      <div class="has-text-centered-mobile">
+        <button class="button is-success load-more-button">
+          <span class="icon">
+            <!-- Feather Icon -->
+            <i data-feather="arrow-down-circle"></i>
+          </span>
+          <span>Load More</span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
