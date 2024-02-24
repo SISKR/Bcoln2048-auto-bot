@@ -140,15 +140,26 @@
       <div class="has-text-centered-mobile">
         <button class="button is-success load-more-button">
           <span class="icon">
-            <!-- Feather Icon -->
             <i data-feather="arrow-down-circle"></i>
           </span>
           <span>Load More</span>
         </button>
       </div>
-    </div>
-
+    </div><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
+      // Get the navbar burger element
+      const navbarBurger = document.querySelector('.navbar-burger');
+      // Get the target navbar menu element
+      const navbarMenu = document.getElementById(navbarBurger.dataset.target);
+  
+      // Add click event listener to the navbar burger
+      navbarBurger.addEventListener('click', () => {
+        // Toggle the 'is-active' class on both the burger and the menu
+        navbarBurger.classList.toggle('is-active');
+        navbarMenu.classList.toggle('is-active');
+      });
+  
+      // Initialize Feather icons
       feather.replace();
     </script>
   </body>
