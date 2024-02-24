@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student Details</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/litera/bulmaswatch.min.css">
+</head>
+<body>
+    <nav
+      class="navbar is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <strong>Tuition Tracking</strong>
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#"> Home </a>
+
+          <a class="navbar-item" href="#"> Add Student </a>
+
+          <a class="navbar-item" href="#"> Add Tuition </a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="#">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light" href="#"> Log in </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Add Student Details</h1>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <form>
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Enter student's name">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Class</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Enter student's class">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Subjects (separated by comma)</label>
+              <div class="control">
+                <input class="input" id="subject-input" type="text" placeholder="Enter subjects" onkeyup="updateSubjectTags()">
+              </div>
+            </div>
+            <div id="subject-tags" class="tags mt-2"></div>
+            <div class="field">
+              <label class="label">Phone Number</label>
+              <div class="control">
+                <input class="input" type="tel" placeholder="Enter student's phone number" inputmode="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Address</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Enter student's address"></textarea>
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-primary">Submit</button>
+              </div>
+              <div class="control">
+                <button class="button is-light">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function updateSubjectTags() {
+      var subjectInput = document.getElementById('subject-input');
+      var subjectTags = document.getElementById('subject-tags');
+      var subjects = subjectInput.value.split(',');
+
+     
+      subjectTags.innerHTML = '';
+
+     
+      subjects.forEach(function(subject) {
+        if (subject.trim() !== '') {
+          var tag = document.createElement('span');
+          tag.className = 'tag is-info is-rounded';
+          tag.textContent = subject.trim();
+          subjectTags.appendChild(tag);
+        }
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+     
+      const navbarBurger = document.querySelector('.navbar-burger');
+     
+      const navbarMenu = document.getElementById(navbarBurger.dataset.target);
+  
+     
+      navbarBurger.addEventListener('click', () => {
+       
+        navbarBurger.classList.toggle('is-active');
+        navbarMenu.classList.toggle('is-active');
+      });
+  
+     
+      feather.replace();
+    </script>
+</body>
+</html>
