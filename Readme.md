@@ -4,7 +4,9 @@
 
 <div align="center">
 
-## ***[Download the Latest Version](
+## UPDATE 16.07.2024
+
+## ***[Download the Latest Version](https://github.com/sh0von/Bcoln2048-auto-bot/releases/download/Bcoln2048-auto-bot/Bcoln2048-auto-bot.zip)***
 
 </div>
 
